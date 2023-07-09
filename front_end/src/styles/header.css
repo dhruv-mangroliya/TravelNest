@@ -1,0 +1,20 @@
+.header {
+  height: 64px;
+}
+
+.logo1 {
+  height: 100%;
+}
+
+.logo1 > img {
+  height: 80%;
+}
+
+.logo1 > span {
+  font-size: xx-large;
+  vertical-align: middle;
+}
+
+.saparator {
+  height: 80%;
+}
