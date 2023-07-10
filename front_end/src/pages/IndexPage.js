@@ -1,15 +1,19 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState ,useContext} from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/indexPage.css';
+import { UserContext } from '../UserContext';
 
 export default function IndexPage() {
+    const { user } = useContext(UserContext);
     const [places, setPlaces] = useState([]);
-
     useEffect(() => {
         axios.get('/places').then(response => {
             setPlaces(response.data);
         })
+        if(!user){
+            alert("Login to proceed.");
+        }
     }, []);
 
 

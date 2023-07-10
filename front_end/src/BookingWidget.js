@@ -25,14 +25,18 @@ function BookingWidget({ place }) {
     }
 
     async function bookThisPlace() {
-        const response = await axios.post('/bookings', {
-            checkIn, checkOut, numberOfGuests, name, phone,
-            token: localStorage.getItem('token'),
-            place: place._id,
-            price: numberOfNights * place.price
-        });
-        const bookingId = response.data._id;
-        setRedirect(`/account/bookings/${bookingId}`);
+        if(!user){
+            setRedirect('/login');
+        }else{
+            const response = await axios.post('/bookings', {
+                checkIn, checkOut, numberOfGuests, name, phone,
+                token: localStorage.getItem('token'),
+                place: place._id,
+                price: numberOfNights * place.price
+            });
+            const bookingId = response.data._id;
+            setRedirect(`/account/bookings/${bookingId}`);
+        }
     }
 
     if (redirect) {
