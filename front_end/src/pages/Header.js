@@ -1,5 +1,5 @@
 import '../styles/header.css';
-import logo from '../assets/airbnb_logo.svg';
+import logo from '../assets/nest.jpg';
 import { GoSearch } from 'react-icons/go';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { RiUser3Line } from 'react-icons/ri';
@@ -19,7 +19,7 @@ export default function Header() {
                             className="align-items-center text-decoration-none d-flex h-100 logo1"
                         >
                             <img className="p-1" src={logo} alt="" />
-                            <span className="txt_brand fs-2">Aircnc</span>
+                            <span className="txt_brand fs-2">TravelNest</span>
                         </Link>
                     </div>
                     <div className="d-flex border align-items-center gap-2 border-2 rounded-pill h-75 ps-3 pe-1 py-1 shadow-sm">
